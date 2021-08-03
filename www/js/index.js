@@ -20,10 +20,19 @@ function onDeviceReady() {
         if (result.action == 'resolved') {
             if (result.service.name.toUpperCase().lastIndexOf('WIFIIR', 0) === 0) {
                 var ip = 'http://' + result.service.ipv4Addresses[0];
-                //#!#create <a href> in html
+
+                //create button
+                var button = document.createElement('button');
+                button.innerHTML = 'Open ' + result.service.name;
+                button.onclick = function () {
+                    cordova.InAppBrowser.open(ip, '_self', 'location=no,zoom=no,toolbar=no');
+                    return false;
+                };
+                document.getElementById('app').appendChild(button);
+
                 //css stop wait animation
                 loading_off();
-                var ref = cordova.InAppBrowser.open(ip, '_self', 'location=no,zoom=no,toolbar=no');
+                cordova.InAppBrowser.open(ip, '_self', 'location=no,zoom=no,toolbar=no');
             }
         }
     });

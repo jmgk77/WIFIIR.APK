@@ -1,3 +1,3 @@
 # WIFIIR.APK
 
-Android controller for ESP8266-based IR controller over WIFI
+Android remote for ESP8266-based IR controller over WIFI
