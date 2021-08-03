@@ -8,5 +8,3 @@ node_modules/
 /platforms/
 
 android.keystore
-typings/
-.vscode/
