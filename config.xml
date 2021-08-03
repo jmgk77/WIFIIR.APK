@@ -5,10 +5,10 @@
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>WifiIR</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Android controller for ESP8266-based IR controller over WIFI
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="contato@jmgk.com.br" href="http://jmgk.com.br">
+        JMGK Team
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -30,6 +30,5 @@
             <application android:usesCleartextTraffic="true" />
         </edit-config>
     </platform>
-
-
+    <icon density="mdpi" height="57" platform="android" src="www/icon.png" width="57" />
 </widget>
