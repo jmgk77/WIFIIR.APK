@@ -38,7 +38,7 @@ function set_watch() {
                 if (!iba) {
                     //css stop wait animation
                     loading_off();
-                    iba = once = cordova.InAppBrowser.open(ip, '_self', 'location=no,zoom=no,toolbar=no');
+                    iba = cordova.InAppBrowser.open(ip, '_self', 'location=no,zoom=no,toolbar=no');
                 }
             }
         }
