@@ -74,3 +74,18 @@ html, body {
     margin: 0 auto;
     text-align: center;
 }
+
+.b {
+    width: 20%
+}
+
+.c {
+    width: 60%
+}
+
+.f {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    overflow: hidden
+}
