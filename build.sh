@@ -1,13 +1,13 @@
 #!/bin/sh
 
 #prepare
-rm -rf build
+rm -rf BUILD
 rm app-release.aab  
 rm app-release.apk
 
 #set plugins and code
-cordova create build br.com.jmgk.wifiir WifiIR
-cd build
+cordova create BUILD br.com.jmgk.wifiir WifiIR
+cd BUILD
 rm -rf ./www
 cp -r ../www ./www
 cordova platform add android
@@ -15,13 +15,12 @@ cordova plugin add cordova-plugin-zeroconf
 cordova plugin add cordova-plugin-inappbrowser
 
 #change config.xml
-cp config.xml config.xml.bak
-sed -i 's@version="1.0.0"@version="1.1.6"@' config.xml
-sed -i 's@<description>Sample Apache Cordova App</description>@<description>Android controller for ESP8266-based IR controller over WIFI</description\>@' config.xml
-sed -i '/Apache Cordova Team/d' config.xml
-sed -i '/<\/author>/d' config.xml
-sed -i 's@<author.*>@<author email="contato\@jmgk.com.br" href="http://jmgk.com.br">JMGK Team</author>@' config.xml
-sed -i 's@</widget>@    <icon density="mdpi" height="57" platform="android" src="www/icon.png" width="57" />\n</widget>@' config.xml
+echo "Editing CONFIG.XML..."
+mv config.xml config.xml.bak
+cp ../__config.xml config.xml
+
+#build APK debug
+cordova build android -- --packageType=apk
 
 #build APK
 cordova build android --release -- --packageType=apk

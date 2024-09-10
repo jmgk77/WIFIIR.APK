@@ -12,4 +12,4 @@ keystore-bundle.jks
 
 app-release.aab
 app-release.apk
-build/
+BUILD/
